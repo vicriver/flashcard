@@ -1,6 +1,6 @@
 .input {
-    background-color: floralwhite;
-    border: 1px solid rebeccapurple;
+    /* background-color: floralwhite; */
+    /* border: 1px solid rebeccapurple; */
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -10,20 +10,25 @@
 }
 
 .input > input {
-    background-color: white;
-    border: 1px solid rebeccapurple;
+    background-color: var(--main-white);
+    border: .1rem solid var(--main-red);
     border-radius: .5rem;
     padding: 1rem;
     text-align: center;
 }
 
 .input > button {
-    background-color: var(--main-colour);
+    background-color: var(--main-red);
     border-radius: 1rem;
-    color: floralwhite;
+    color: var(--main-white);
     font-weight: bold;
     font-size: small;
     padding-top: .25rem;
     padding-bottom: .25rem;
     user-select: none;
+    transition-duration: 100ms;
+}
+
+.input > button:hover {
+    opacity: 60%;
 }

@@ -1,16 +1,49 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
 
 
 :root {
-    --main-colour: #6C8EBF; /* fuji blue */
-    --main-white: #F2EFE4; /* shironeri */
+    --main-colour: #1C1C1E; /* fuji blue */
+    --main-white: #F2F2F0; /* shironeri */
     --main-red: #9B1B30; /* urushi red */
     --main-neutral: #FAF3E0; /* cream */
 }
 
 body {
-    background-color: aliceblue;
-    color: rebeccapurple;
+    background: linear-gradient(
+        180deg,
+        #F6F3EB 0%,
+        #F2D1B3 50%,
+        #D9A179 100%
+    );
+    color: #1A1816;
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+#top {
+    height: 3vh;
+}
+
+#top > div {
+    display: flex;
+    gap: 1rem;
+    justify-content: right;
+    align-items: center;
+    /* border: 1px solid red; */
+    padding: 1rem;
+    user-select: none;
+}
+
+#top > div > .nav-item {
+    border-radius: 1rem;
+    color: #1A1816;
+    transition-duration: 100ms;
+}
+
+#top > div > .nav-item:hover {
+    background-color: #1A1816;
+    color: white;
+    cursor: pointer;
 }
 
 
@@ -19,8 +52,14 @@ body {
     flex-direction: column;
     justify-content: center;
     margin: auto;
-    border: 1px solid black;
     align-items: center;
-    height: 100vh;
+    height: 95vh;
     gap: 1rem;
+}
+
+#bottom {
+    text-align: right;
+    margin-right: 1rem;
+    font-size: small;
+    height: 2vh;
 }
