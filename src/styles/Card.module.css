@@ -1,0 +1,22 @@
+.card {
+    background-color: floralwhite;
+    border: .1rem solid rebeccapurple;
+    font-weight: bold;
+    font-size: 6rem;
+    border-radius: 1rem;
+    aspect-ratio: 2/3;
+    height: 24rem;
+    user-select: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .card > div {
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+} */

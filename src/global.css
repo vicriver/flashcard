@@ -9,9 +9,11 @@ body {
 
 #main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin: auto;
     border: 1px solid black;
     align-items: center;
     height: 100vh;
+    gap: 1rem;
 }
