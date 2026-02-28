@@ -1,0 +1,29 @@
+.input {
+    background-color: floralwhite;
+    border: 1px solid rebeccapurple;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 1rem;
+    gap: 1rem;
+    user-select: none;
+}
+
+.input > input {
+    background-color: white;
+    border: 1px solid rebeccapurple;
+    border-radius: .5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.input > button {
+    background-color: rebeccapurple;
+    border-radius: 1rem;
+    color: floralwhite;
+    font-weight: bold;
+    font-size: small;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    user-select: none;
+}
