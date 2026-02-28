@@ -1,6 +1,13 @@
 @import "tailwindcss";
 
 
+:root {
+    --main-colour: #6C8EBF; /* fuji blue */
+    --main-white: #F2EFE4; /* shironeri */
+    --main-red: #9B1B30; /* urushi red */
+    --main-neutral: #FAF3E0; /* cream */
+}
+
 body {
     background-color: aliceblue;
     color: rebeccapurple;

@@ -18,7 +18,7 @@
 }
 
 .input > button {
-    background-color: rebeccapurple;
+    background-color: var(--main-colour);
     border-radius: 1rem;
     color: floralwhite;
     font-weight: bold;

@@ -1,6 +1,6 @@
 .card {
-    background-color: floralwhite;
-    border: .1rem solid rebeccapurple;
+    background-color: var(--main-neutral);
+    border: .1rem solid var(--main-red);
     font-weight: bold;
     font-size: 6rem;
     border-radius: 1rem;
@@ -11,6 +11,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.card > div {
+    color: var(--main-red);
 }
 
 /* .card > div {
