@@ -1,30 +1,36 @@
-import { LanguagesIcon } from "lucide-react";
-import { iconSize, languages } from "../assets/utils/constants";
+import { ChevronDownIcon } from "lucide-react";
+import { languages } from "../assets/utils/constants";
 import type { LanguageProps } from "../assets/utils/types";
 import { Select } from "@base-ui/react";
+import styles from '../styles/Top.module.css'
+import { useState } from "react";
 
 export default function Languages() {
+
+    const [ language, setLanguage ] = useState<LanguageProps | null>(languages[1])
     return (
-        <Select.Root>
-            <Select.Trigger className="flex items-center gap-2 border border-black p-2 rounded bg-[var(--main-white)] hover:opacity-60">
-                <Select.Value />
-                <LanguagesIcon size={iconSize} />
-                {languages.find((language : LanguageProps) => language.endpoint === 'jp' )?.native}
-                <Select.Icon />
-            </Select.Trigger>
-            <Select.Portal>
-                <Select.Positioner>
-                    <Select.Popup>
-                        {languages.map((language : LanguageProps) => {
-                            return (
-                                <Select.Item value={language.endpoint} key={language.id}>
-                                    {language.native}
-                                </Select.Item>
-                            )
-                        })}
-                    </Select.Popup>
-                </Select.Positioner>
-            </Select.Portal>
-        </Select.Root>
+            <Select.Root value={language} onValueChange={setLanguage} disabled>
+                <Select.Trigger className={styles.languages}>
+                    <Select.Value placeholder="Select language" />
+                    {/* <LanguagesIcon size={iconSize} />
+                    {languages.find((language : LanguageProps) => language.endpoint === 'jp' )?.native} */}
+                    <Select.Icon><ChevronDownIcon /></Select.Icon>
+                </Select.Trigger>
+                <Select.Portal>
+                    <Select.Positioner>
+                        <Select.Popup className={styles.lg_menu}>
+                            <Select.List>
+                            {languages.map((lg : LanguageProps) => {
+                                return (
+                                    <Select.Item value={lg.native} key={lg.id} className={styles.lg_item}>
+                                        {lg.native}
+                                    </Select.Item>
+                                )
+                            })}
+                            </Select.List>
+                        </Select.Popup>
+                    </Select.Positioner>
+                </Select.Portal>
+            </Select.Root>
     )
 }

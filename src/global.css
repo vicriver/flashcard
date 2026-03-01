@@ -41,7 +41,7 @@ body {
 }
 
 #top > div > .nav-item:hover {
-    background-color: #1A1816;
+    background-color: var(--main-colour);
     color: white;
     cursor: pointer;
 }

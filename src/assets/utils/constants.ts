@@ -16,3 +16,9 @@ export const languages: LanguageProps[] = [
         native: '日本語',
     }
 ]
+
+export type CharacterProps = {
+    id: number
+    romaji: string
+    character: string
+}
