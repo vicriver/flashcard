@@ -15,6 +15,7 @@ type GameProps = {
 export default function Game({deck, setDeck} : GameProps) {
     const [ score, setScore ] = useState<number>(0);
     const [ isFlipped, setIsFlipped ] = useState<boolean>(false);
+    const [ angle, setAngle ] = useState<number>(0);
 
     const handleReset = () => {
         setScore(0);
@@ -29,6 +30,7 @@ export default function Game({deck, setDeck} : GameProps) {
                 deck={deck} 
                 isFlipped={isFlipped}
                 setIsFlipped={setIsFlipped}
+                angle={angle}
                 />
             <InputField 
                 deck={deck} 
@@ -37,6 +39,8 @@ export default function Game({deck, setDeck} : GameProps) {
                 setScore={setScore} 
                 isFlipped={isFlipped}
                 setIsFlipped={setIsFlipped}
+                angle={angle}
+                setAngle={setAngle}
                 />
         </div>
     )

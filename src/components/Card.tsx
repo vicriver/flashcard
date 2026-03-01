@@ -1,15 +1,16 @@
 import type { CardProps } from '../assets/utils/types'
 import { motion } from 'motion/react'
 import styles from  '../styles/Card.module.css'
-import type { Dispatch, SetStateAction } from 'react'
+import { type Dispatch, type SetStateAction } from 'react'
 
 type Card ={
     deck: CardProps[]
     isFlipped: boolean
     setIsFlipped: Dispatch<SetStateAction<boolean>>
+    angle: number
 }
 
-export default function Card({ deck, isFlipped, setIsFlipped } : Card) {
+export default function Card({ deck, isFlipped, setIsFlipped, angle } : Card) {
     const cardAnimation = {
         visible: { opacity: 1 },
         hidden: { opacitiy: 0, y: -100 },
@@ -24,7 +25,7 @@ export default function Card({ deck, isFlipped, setIsFlipped } : Card) {
                     key={deck[0].character}
                     variants={cardAnimation}
                     initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 100, y: [0, -50, 0], transition: { duration: .5 } }}
+                    animate={{ opacity: 100, y: [0, -50, 0], rotate: angle, transition: { duration: .5 } }}
                     // exit='hidden'
                     whileHover={{ rotate: 5 }}
                     whileTap={{ rotate: -5 }}

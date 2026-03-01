@@ -10,6 +10,8 @@ type InputField = {
     setScore: Dispatch<SetStateAction<number>>
     isFlipped: boolean
     setIsFlipped: Dispatch<SetStateAction<boolean>>
+    angle: number
+    setAngle: Dispatch<SetStateAction<number>>
 }
 
 export default function InputField({
@@ -18,7 +20,9 @@ export default function InputField({
     score, 
     setScore,
     isFlipped,
-    setIsFlipped
+    setIsFlipped,
+    angle,
+    setAngle,
 } : InputField) {
     const [ value, setValue ] = useState<string>('');
 
@@ -41,6 +45,7 @@ export default function InputField({
             setScore(score + 1);
         }
         setIsFlipped(true);
+        // setAngle(Math.random() * 30 - 15 - angle);
         btnRef.current?.focus()
 
     }
@@ -50,13 +55,14 @@ export default function InputField({
         const newDeck = deck.slice(1);
         setDeck(newDeck);
         setIsFlipped(false);
+        setAngle(0);
         controlRef.current?.focus();
     }
 
     const handleSubmit = (e: SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!value.trim()) return;
-
+        console.log('angle', angle);
         if (isFlipped) {
             handleNext();
         } else {
@@ -75,6 +81,7 @@ export default function InputField({
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
                     autoFocus 
+                    autoComplete="off"
                     disabled={isFlipped}
                     className={'disabled:opacity-20'}
                     />

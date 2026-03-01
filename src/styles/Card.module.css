@@ -30,7 +30,12 @@
   pointer-events: none;
 }
 
+.card_back {
+  background-color: var(--main-colour);
+}
+
 .card_back > div {
+  color: #C9A84C;
   transform: rotateY(180deg);
 }
 
