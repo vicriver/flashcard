@@ -12,7 +12,7 @@ export default function InputField({deck, setDeck} : InputField) {
     return (
         <Field.Root className={styles.input}>
             <Field.Label className={'text-center font-extrabold'}>ローマ字</Field.Label>
-            <Field.Control />
+            <Field.Control autoFocus />
             <Button>Submit</Button>
         </Field.Root>
     )
