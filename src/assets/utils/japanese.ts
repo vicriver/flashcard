@@ -1,30 +1,35 @@
 import type { CardProps } from "./types";
 
 
-export const hiragana: CardProps[] = [
+export const jpDeck: CardProps[] = [
     {
         id: 0,
-        romaji: 'a',
+        roman: 'a',
         character: 'あ',
+        system: 'hiragana',
     },
     {
         id: 1,
-        romaji: 'i',
+        roman: 'i',
         character: 'い',
+        system: 'hiragana',
     },
     {
         id: 2,
-        romaji: 'u',
+        roman: 'u',
         character: 'う',
+        system: 'hiragana',
     },
     {
         id: 3,
-        romaji: 'e',
+        roman: 'e',
         character: 'え',
+        system: 'hiragana',
     },
     {
         id: 4,
-        romaji: 'o',
+        roman: 'o',
         character: 'お',
+        system: 'hiragana',
     },
 ]

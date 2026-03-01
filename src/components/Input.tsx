@@ -41,7 +41,7 @@ export default function InputField({
 
         if (!value.trim()) return;
 
-        if (value.toLocaleLowerCase().trim() === deck[0].romaji) {
+        if (value.toLocaleLowerCase().trim() === deck[0].roman) {
             setScore(score + 1);
         }
         setIsFlipped(true);

@@ -1,3 +1,8 @@
+.card_wrap {
+  background-color: var(--main-colour);
+  box-shadow: 1rem 1rem 1rem var(--main-colour);
+}
+
 .card {
     background-color: var(--main-neutral);
     border: .1rem solid var(--main-red);
@@ -8,6 +13,7 @@
     height: 32rem;
     user-select: none;
     backface-visibility: hidden;
+    
 
     display: flex;
     align-items: center;
@@ -32,11 +38,13 @@
 
 .card_back {
   background-color: var(--main-colour);
+  backface-visibility: hidden;
 }
 
 .card_back > div {
   color: #C9A84C;
   transform: rotateY(180deg);
+  /* backface-visibility: hidden; */
 }
 
 

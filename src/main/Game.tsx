@@ -3,8 +3,8 @@ import Card from '../components/Card'
 import InputField from '../components/Input'
 import type { CardProps } from '../assets/utils/types'
 import { shuffleDeck } from '../components/Shuffle'
-import { hiragana } from '../assets/utils/hiragana'
 import GameOver from '../components/Over'
+import { jpDeck } from '../assets/utils/japanese'
 
 
 type GameProps = {
@@ -19,7 +19,7 @@ export default function Game({deck, setDeck} : GameProps) {
 
     const handleReset = () => {
         setScore(0);
-        setDeck(() => shuffleDeck(hiragana));
+        setDeck(() => shuffleDeck(jpDeck));
     }
 
     if (deck.length === 0) return <GameOver score={score} handleReset={handleReset} />

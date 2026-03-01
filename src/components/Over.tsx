@@ -18,7 +18,7 @@ export default function GameOver({score, handleReset} : GameOver ) {
             <div>Score : </div>
             <div>{score}</div>
         </div>
-        <Button className={styles.btn} onClick={handleReset}>
+        <Button className={styles.btn} onClick={handleReset} autoFocus>
             <RedoIcon />
             Replay
         </Button>

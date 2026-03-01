@@ -17,26 +17,28 @@ export default function Card({ deck, isFlipped, setIsFlipped, angle } : Card) {
     }
 
     return (
-        <div>
+        <div className='m-12'>
             <motion.div
                 animate={{ rotateY: isFlipped ? 180 : 0}}
                 >
-                <motion.div 
-                    key={deck[0].character}
-                    variants={cardAnimation}
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 100, y: [0, -50, 0], rotate: angle, transition: { duration: .5 } }}
-                    // exit='hidden'
-                    whileHover={{ rotate: 5 }}
-                    whileTap={{ rotate: -5 }}
-                    transition={{ ease: "easeInOut", duration: .25 }}
-                    >
-                        <Content deck={deck} isFlipped={isFlipped} />
-                    {/* <div className={`${styles.card} ${styles.hanafuda}`}>
-                        <div>
-                            {deck[0].character}
-                        </div>
-                    </div> */}
+                <motion.div drag dragConstraints={{ top: 50, left: 50, right: 50, bottom: 50 }} dragSnapToOrigin>
+                    <motion.div 
+                        key={deck[0].character}
+                        variants={cardAnimation}
+                        initial={{ opacity: 0, y: 100 }}
+                        animate={{ opacity: 100, y: [0, -50, 0], rotate: angle, transition: { duration: .5 } }}
+                        // exit='hidden'
+                        whileHover={{ rotate: 5 }}
+                        // whileTap={{ rotate: -5 }}
+                        transition={{ ease: "easeInOut", duration: .25 }}
+                        >
+                            <Content deck={deck} isFlipped={isFlipped} />
+                        {/* <div className={`${styles.card} ${styles.hanafuda}`}>
+                            <div>
+                                {deck[0].character}
+                            </div>
+                        </div> */}
+                    </motion.div>
                 </motion.div>
             </motion.div>
         </div>
@@ -48,7 +50,7 @@ const Content = ({deck, isFlipped} : {deck: CardProps[]; isFlipped: boolean}) =>
     if (isFlipped) return   (
         <div className={`${styles.card} ${styles.card_back} ${styles.hanafuda}`}>
             <div>
-                {deck[0].romaji}
+                {deck[0].roman}
             </div>
         </div>
     )

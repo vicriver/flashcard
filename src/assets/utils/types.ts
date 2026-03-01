@@ -3,10 +3,12 @@ export type LanguageProps  = {
     endpoint: string
     label: string
     native: string
+    
 }
 
 export type CardProps = {
     id: number
-    romaji: string
+    roman: string
     character: string
+    system: 'hiragana' | 'katakana' | 'kanji'
 }
