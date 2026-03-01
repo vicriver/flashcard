@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
-import Card from "../components/Card";
-import InputField from "../components/Input";
+import { useState } from "react";
 import Top from "../nav/Top";
 import { hiragana } from "../assets/utils/hiragana";
 import type { CardProps } from "../assets/utils/types";
 import { shuffleDeck } from "../components/Shuffle";
+import Game from "./Game";
 
 export default function Main() {
     const [ deck, setDeck ] = useState<CardProps[]>(() => shuffleDeck(hiragana));
@@ -12,10 +11,7 @@ export default function Main() {
     return (
         <div>
             <Top />
-            <div id="main">
-                <Card deck={deck} />
-                <InputField deck={deck} setDeck={setDeck} />
-            </div>
+            <Game deck={deck} setDeck={setDeck} />
             <div id="bottom">
                 version 0.1
             </div>

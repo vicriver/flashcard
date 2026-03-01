@@ -19,8 +19,8 @@ export default function Card({ deck } : Card) {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 100, y: [0, -50, 0], transition: { duration: .5 } }}
                 exit='hidden'
-                whileHover={{ rotate: 15 }}
-                whileTap={{ rotate: -15 }}
+                whileHover={{ rotate: 5 }}
+                whileTap={{ rotate: -5 }}
                 transition={{ ease: "easeInOut", duration: .25 }}
                 >
                 <div className={`${styles.card} ${styles.hanafuda}`}>
