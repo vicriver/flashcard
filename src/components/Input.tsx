@@ -1,7 +1,7 @@
 import { Button, Field, Form } from "@base-ui/react";
 import styles from  '../styles/Input.module.css'
 import type { CardProps } from "../assets/utils/types";
-import { useState, type Dispatch, type SetStateAction, type SubmitEvent } from "react";
+import { useEffect, useRef, useState, type Dispatch, type SetStateAction, type SubmitEvent } from "react";
 
 type InputField = {
     deck: CardProps[]
@@ -22,54 +22,63 @@ export default function InputField({
 } : InputField) {
     const [ value, setValue ] = useState<string>('');
 
-    const handleFlip = (e: SubmitEvent<HTMLFormElement>) => {
-        e.preventDefault();
+    const controlRef = useRef<HTMLInputElement>(null);
+    const btnRef = useRef<HTMLDivElement>(null);
+
+
+    useEffect(() => {
+        if (!isFlipped) {
+            controlRef.current?.focus()
+        }
+    }, [isFlipped])
+
+
+    const handleFlip = () => {
+
         if (!value.trim()) return;
 
         if (value.toLocaleLowerCase().trim() === deck[0].romaji) {
-            setValue('');
-            setIsFlipped(true);
+            setScore(score + 1);
         }
+        setIsFlipped(true);
+        btnRef.current?.focus()
 
     }
 
     const handleNext = () => {
+        setValue('');
         const newDeck = deck.slice(1);
         setDeck(newDeck);
         setIsFlipped(false);
+        controlRef.current?.focus();
     }
 
     const handleSubmit = (e: SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!value.trim()) return;
 
-        const newDeck = deck.slice(1);
-        setDeck(newDeck);
-        setIsFlipped(true);
-        
-        if (value.toLowerCase().trim() === deck[0].romaji) {
-            const newScore = score + 1;
-            setValue('');
-            setScore(newScore);
+        if (isFlipped) {
+            handleNext();
         } else {
-            setValue('');
+            handleFlip();
         }
-
     }
 
     const submit = isFlipped ? 'Next' : 'Submit';
 
     return (
-        <Form onSubmit={isFlipped ? handleNext : handleFlip}>
+        <Form onSubmit={handleSubmit}>
             <Field.Root className={styles.input}>
                 <Field.Label className={'text-center font-extrabold'}>ローマ字</Field.Label>
                 <Field.Control 
+                    ref={controlRef}
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
                     autoFocus 
-                    // disabled={isFlipped}
+                    disabled={isFlipped}
+                    className={'disabled:opacity-20'}
                     />
-                <Button>{submit}</Button>
+                <Button ref={btnRef} type="submit">{submit}</Button>
             </Field.Root>
         </Form>
     )
