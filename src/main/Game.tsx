@@ -5,6 +5,8 @@ import type { CardProps } from '../assets/utils/types'
 import { Button } from '@base-ui/react'
 import { shuffleDeck } from '../components/Shuffle'
 import { hiragana } from '../assets/utils/hiragana'
+import styles from '../styles/utils.module.css'
+import { RedoIcon } from 'lucide-react'
 
 type GameProps = {
     deck: CardProps[]
@@ -22,7 +24,10 @@ export default function Game({deck, setDeck} : GameProps) {
             <div className='text-xl font-bold'>
                 A winner is you! 
             </div>
-            <Button onClick={handleReset}>Restart</Button>
+            <Button className={styles.btn} onClick={handleReset}>
+                <RedoIcon />
+                Replay
+            </Button>
         </div>
     )
 

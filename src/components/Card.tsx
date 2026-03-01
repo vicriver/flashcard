@@ -15,6 +15,7 @@ export default function Card({ deck } : Card) {
     return (
         <div>
             <motion.div 
+                key={deck[0].character}
                 variants={cardAnimation}
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 100, y: [0, -50, 0], transition: { duration: .5 } }}

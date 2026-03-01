@@ -15,7 +15,7 @@ export default function InputField({deck, setDeck} : InputField) {
         e.preventDefault();
         if (!card.trim()) return;
 
-        if (card === deck[0].romaji) {
+        if (card.toLowerCase().trim() === deck[0].romaji) {
             const newDeck = deck.slice(1);
             setDeck(newDeck);
             setCard('');

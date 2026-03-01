@@ -1,0 +1,19 @@
+.btn {
+    /* border: .1rem solid var(--main-colour); */
+    padding: .5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 1rem;
+    font-size: small;
+    background-color: var(--main-red);
+    color: var(--main-white);
+    /* box-shadow: .25rem .25rem .5rem var(--main-colour); */
+    display: flex;
+    gap: 1rem;
+    user-select: none;
+    transition-duration: 100ms;
+}
+
+.btn:hover {
+    opacity: 80%;
+}
