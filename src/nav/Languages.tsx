@@ -12,8 +12,6 @@ export default function Languages() {
             <Select.Root value={language} onValueChange={setLanguage} disabled>
                 <Select.Trigger className={styles.languages}>
                     <Select.Value placeholder="Select language" />
-                    {/* <LanguagesIcon size={iconSize} />
-                    {languages.find((language : LanguageProps) => language.endpoint === 'jp' )?.native} */}
                     <Select.Icon><ChevronDownIcon /></Select.Icon>
                 </Select.Trigger>
                 <Select.Portal>

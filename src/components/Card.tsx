@@ -1,11 +1,16 @@
+import type { CardProps } from '../assets/utils/types'
 import styles from  '../styles/Card.module.css'
 
-export default function Card() {
+type Card ={
+    deck: CardProps[]
+}
+
+export default function Card({ deck } : Card) {
     return (
         <div>
             <div className={`${styles.card} ${styles.hanafuda}`}>
                 <div>
-                    あ
+                    {deck[0].character}
                 </div>
             </div>
         </div>

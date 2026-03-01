@@ -4,3 +4,9 @@ export type LanguageProps  = {
     label: string
     native: string
 }
+
+export type CardProps = {
+    id: number
+    romaji: string
+    character: string
+}

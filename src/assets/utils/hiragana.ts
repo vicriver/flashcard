@@ -1,6 +1,7 @@
-import type { CharacterProps } from "./constants";
+import type { CardProps } from "./types";
 
-export const hiragana: CharacterProps[] = [
+
+export const hiragana: CardProps[] = [
     {
         id: 0,
         romaji: 'a',
