@@ -7,6 +7,7 @@
     aspect-ratio: 21/34;
     height: 32rem;
     user-select: none;
+    backface-visibility: hidden;
 
     display: flex;
     align-items: center;
@@ -27,6 +28,10 @@
     );
   opacity: 0.3;
   pointer-events: none;
+}
+
+.card_back > div {
+  transform: rotateY(180deg);
 }
 
 
