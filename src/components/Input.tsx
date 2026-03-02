@@ -1,9 +1,11 @@
 import { Button, Field, Form } from "@base-ui/react";
 import styles from  '../styles/Input.module.css'
 import type { CardProps } from "../assets/utils/types";
-import { useEffect, useRef, useState, type Dispatch, type SetStateAction, type SubmitEvent } from "react";
+import { useEffect, useRef, type Dispatch, type SetStateAction, type SubmitEvent } from "react";
 
 type InputField = {
+    value: string,
+    setValue: Dispatch<SetStateAction<string>>
     deck: CardProps[]
     setDeck: Dispatch<SetStateAction<CardProps[]>>
     score: number
@@ -15,6 +17,8 @@ type InputField = {
 }
 
 export default function InputField({
+    value,
+    setValue,
     deck, 
     setDeck, 
     score, 
@@ -24,7 +28,6 @@ export default function InputField({
     angle,
     setAngle,
 } : InputField) {
-    const [ value, setValue ] = useState<string>('');
 
     const controlRef = useRef<HTMLInputElement>(null);
     const btnRef = useRef<HTMLDivElement>(null);
@@ -79,6 +82,7 @@ export default function InputField({
                 <Field.Control 
                     ref={controlRef}
                     value={value}
+                    placeholder="Enter answer..."
                     onChange={(e) => setValue(e.target.value)}
                     autoFocus 
                     autoComplete="off"

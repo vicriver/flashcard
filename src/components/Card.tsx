@@ -17,7 +17,7 @@ export default function Card({ deck, isFlipped, setIsFlipped, angle } : Card) {
     }
 
     return (
-        <div className='m-12'>
+        <div className='m-24 flex justify-center'>
             <motion.div
                 animate={{ rotateY: isFlipped ? 180 : 0}}
                 >

@@ -9,12 +9,22 @@
     user-select: none;
 }
 
-.input > input {
+/* .input > input {
     background-color: var(--main-white);
     border: .1rem solid var(--main-red);
     border-radius: .5rem;
     padding: 1rem;
     text-align: center;
+} */
+
+.input > input {
+    border-bottom: .25rem;
+    border-style: double;
+    padding: .5rem;
+    /* border-radius: 1rem; */
+    border-color: var(--main-colour);
+    text-align: center;
+
 }
 
 .input > button {
